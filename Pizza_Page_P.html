@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pizza Page</title>
+        <link rel="stylesheet" href="Stylesheet_P_Pizza.css" />
+    </head>
+    <body>
+        <header>
+            <div class="navbar">
+                <div class="navbar-links">
+                    <a href="Home_Page_P.html" target="_self">Home</a>
+                    <a href="Your_Cart.html" target="_self">Cart</a>
+                    <a href="logout.php" target="_self">Log Out</a>
+                </div>
+            </div>
+        </header>
+        <div class="header">
+            <div class="card">
+                <div class="title">
+                    <h1>PIZZAS</h1>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="row">
+            <div class="container">
+                <div class="items"><img src="Margherita.jpg" alt="Margherita Pizza"></div>
+                <div class="item_detail">
+                    <div class="item_name">Margherita Pizza</div>
+                    <div class="money">Rs200</div>
+                    <div>15-20 minutes</div>
+                </div>
+                <div class="counter-container" data-id="16">
+                    <button class="counter-button" onclick="decreaseCount(16)">-</button>
+                    <div class="counter-display" id="counter-16">0</div>
+                    <button class="counter-button" onclick="increaseCount(16)">+</button>
+                </div>
+                <div class="cart">
+                    <button onclick="addToCart(16)">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="container">
+                <div class="items"><img src="Pepperoni.jpg" alt="Pepperoni Pizza"></div>
+                <div class="item_detail">
+                    <div class="item_name">Pepperoni Pizza</div>
+                    <div class="money">Rs250</div>
+                    <div>20-30 minutes</div>
+                </div>
+                <div class="counter-container" data-id="17">
+                    <button class="counter-button" onclick="decreaseCount(17)">-</button>
+                    <div class="counter-display" id="counter-17">0</div>
+                    <button class="counter-button" onclick="increaseCount(17)">+</button>
+                </div>
+                <div class="cart">
+                    <button onclick="addToCart(17)">Add to Cart</button>
+                </div>
+            </div>
+        
+            <div class="container">
+                <div class="items"><img src="Veggie.jpg" alt="Veggie Pizza"></div>
+                <div class="item_detail">
+                    <div class="item_name">Veggie Pizza</div>
+                    <div class="money">Rs220</div>
+                    <div>15-25 minutes</div>
+                </div>
+                <div class="counter-container" data-id="18">
+                    <button class="counter-button" onclick="decreaseCount(18)">-</button>
+                    <div class="counter-display" id="counter-18">0</div>
+                    <button class="counter-button" onclick="increaseCount(18)">+</button>
+                </div>
+                <div class="cart">
+                    <button onclick="addToCart(18)">Add to Cart</button>
+                </div>
+            </div>
+        
+            <div class="container">
+                <div class="items"><img src="BBQ_Chicken.jpg" alt="BBQ Chicken Pizza"></div>
+                <div class="item_detail">
+                    <div class="item_name">BBQ Chicken Pizza</div>
+                    <div class="money">Rs280</div>
+                    <div>20-30 minutes</div>
+                </div>
+                <div class="counter-container" data-id="19">
+                    <button class="counter-button" onclick="decreaseCount(19)">-</button>
+                    <div class="counter-display" id="counter-19">0</div>
+                    <button class="counter-button" onclick="increaseCount(19)">+</button>
+                </div>
+                <div class="cart">
+                    <button onclick="addToCart(19)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <script>
+            let counters = {};
+            function updateDisplay(id) {
+                document.getElementById('counter-' + id).innerText = counters[id];
+            }
+            function increaseCount(id) {
+                if (!counters[id]) counters[id] = 0;
+                counters[id]++;
+                updateDisplay(id);
+            }
+            function decreaseCount(id) {
+                if (!counters[id]) counters[id] = 0;
+                if (counters[id] > 0) counters[id]--;
+                updateDisplay(id);
+            }
+            function addToCart(id) {
+        let quantity = counters[id] || 0;
+        if (quantity > 0) {
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "add_to_cart.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    alert(xhr.responseText);
+                }
+            };
+            xhr.send("id=" + id + "&quantity=" + quantity);
+        } else {
+            alert("Please select a quantity greater than 0");
+        }
+    }
+
+        </script>
+    </body>
+</html>

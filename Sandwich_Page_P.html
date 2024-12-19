@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sandwich Page</title>
+        <link rel="stylesheet" href="Stylesheet_P_Sandwich.css" />
+    </head>
+    <body>
+        <header>
+            <div class="navbar">
+                <div class="navbar-links">
+                    <a href="Home_Page_P.html" target="_self">Home</a>
+                    <a href="Your_Cart.html" target="_self">Cart</a>
+                    <a href="logout.php" target="_self">Log Out</a>
+                </div>
+            </div>
+        </header>
+        <div class="header">
+            <div class="card">
+                <div class="title">
+                    <h1>SANDWICHES</h1>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="row">
+            <div class="container">
+                <div class="items"><img src="Chicken_Club_Sandwich.jpg" alt="Chicken Club Sandwich"></div>
+                <div class="item_detail">
+                    <div class="item_name">Chicken Club Sandwich</div>
+                    <div class="money">Rs150</div>
+                    <div>10-15 minutes</div>
+                </div>
+                <div class="counter-container" data-id="9">
+                    <button class="counter-button" onclick="decreaseCount(9)">-</button>
+                    <div class="counter-display" id="counter-9">0</div>
+                    <button class="counter-button" onclick="increaseCount(9)">+</button>
+                </div>
+                <div class="cart">
+                    <button onclick="addToCart(9)">Add to Cart</button>
+                </div>
+            </div>
+        
+            <div class="container">
+                <div class="items"><img src="Ham_and_Cheese_Sandwich.jpg" alt="Ham and Cheese Sandwich"></div>
+                <div class="item_detail">
+                    <div class="item_name">Ham and Cheese Sandwich</div>
+                    <div class="money">Rs180</div>
+                    <div>15-20 minutes</div>
+                </div>
+                <div class="counter-container" data-id="10">
+                    <button class="counter-button" onclick="decreaseCount(10)">-</button>
+                    <div class="counter-display" id="counter-10">0</div>
+                    <button class="counter-button" onclick="increaseCount(10)">+</button>
+                </div>
+                <div class="cart">
+                    <button onclick="addToCart(10)">Add to Cart</button>
+                </div>
+            </div>
+        
+            <div class="container">
+                <div class="items"><img src="Veggie_Delight_Sandwich.jpg" alt="Veggie Delight Sandwich"></div>
+                <div class="item_detail">
+                    <div class="item_name">Veggie Delight Sandwich</div>
+                    <div class="money">Rs120</div>
+                    <div>10-15 minutes</div>
+                </div>
+                <div class="counter-container" data-id="11">
+                    <button class="counter-button" onclick="decreaseCount(11)">-</button>
+                    <div class="counter-display" id="counter-11">0</div>
+                    <button class="counter-button" onclick="increaseCount(11)">+</button>
+                </div>
+                <div class="cart">
+                    <button onclick="addToCart(11)">Add to Cart</button>
+                </div>
+            </div>
+        
+            <div class="container">
+                <div class="items"><img src="Turkey_Bacon_Sandwich.jpg" alt="Turkey Bacon Sandwich"></div>
+                <div class="item_detail">
+                    <div class="item_name">Turkey Bacon Sandwich</div>
+                    <div class="money">Rs200</div>
+                    <div>15-20 minutes</div>
+                </div>
+                <div class="counter-container" data-id="12">
+                    <button class="counter-button" onclick="decreaseCount(12)">-</button>
+                    <div class="counter-display" id="counter-12">0</div>
+                    <button class="counter-button" onclick="increaseCount(12)">+</button>
+                </div>
+                <div class="cart">
+                    <button onclick="addToCart(12)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="row">
+            <div class="container">
+                <div class="items"><img src="Roast_Beef_Sandwich.jpg" alt="Roast Beef Sandwich"></div>
+                <div class="item_detail">
+                    <div class="item_name">Roast Beef Sandwich</div>
+                    <div class="money">Rs220</div>
+                    <div>15-25 minutes</div>
+                </div>
+                <div class="counter-container" data-id="13">
+                    <button class="counter-button" onclick="decreaseCount(13)">-</button>
+                    <div class="counter-display" id="counter-13">0</div>
+                    <button class="counter-button" onclick="increaseCount(13)">+</button>
+                </div>
+                <div class="cart">
+                    <button onclick="addToCart(13)">Add to Cart</button>
+                </div>
+            </div>
+        
+            <div class="container">
+                <div class="items"><img src="BLT_Sandwich.jpg" alt="BLT Sandwich"></div>
+                <div class="item_detail">
+                    <div class="item_name">BLT Sandwich</div>
+                    <div class="money">Rs190</div>
+                    <div>10-15 minutes</div>
+                </div>
+                <div class="counter-container" data-id="14">
+                    <button class="counter-button" onclick="decreaseCount(14)">-</button>
+                    <div class="counter-display" id="counter-14">0</div>
+                    <button class="counter-button" onclick="increaseCount(14)">+</button>
+                </div>
+                <div class="cart">
+                    <button onclick="addToCart(14)">Add to Cart</button>
+                </div>
+            </div>
+        
+            <div class="container">
+                <div class="items"><img src="Grilled_Cheese Sandwich.jpg" alt="Grilled Cheese Sandwich"></div>
+                <div class="item_detail">
+                    <div class="item_name">Grilled Cheese Sandwich</div>
+                    <div class="money">Rs130</div>
+                    <div>5-10 minutes</div>
+                </div>
+                <div class="counter-container" data-id="15">
+                    <button class="counter-button" onclick="decreaseCount(15)">-</button>
+                    <div class="counter-display" id="counter-15">0</div>
+                    <button class="counter-button" onclick="increaseCount(15)">+</button>
+                </div>
+                <div class="cart">
+                    <button onclick="addToCart(15)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <script>
+            let counters = {};
+            function updateDisplay(id) {
+                document.getElementById('counter-' + id).innerText = counters[id];
+            }
+            function increaseCount(id) {
+                if (!counters[id]) counters[id] = 0;
+                counters[id]++;
+                updateDisplay(id);
+            }
+            function decreaseCount(id) {
+                if (!counters[id]) counters[id] = 0;
+                if (counters[id] > 0) counters[id]--;
+                updateDisplay(id);
+            }
+            function addToCart(id) {
+        let quantity = counters[id] || 0;
+        if (quantity > 0) {
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "add_to_cart.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    alert(xhr.responseText);
+                }
+            };
+            xhr.send("id=" + id + "&quantity=" + quantity);
+        } else {
+            alert("Please select a quantity greater than 0");
+        }
+    }
+
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>IceCream</title>
+        <link rel="stylesheet" href="Stylesheet_P_Ice_Cream.css"/>
+    </head>
+    <body>
+        <header >
+            <div class="navbar"> 
+                <div class="navbar-links">
+                    <a href="Home_Page_P.html" target="_self">Home</a>
+                    <a href="Your_Cart.html" target="_self">Cart</a>
+                    <a href="logout.php" target="_self">Log Out</a>
+                </div>
+            </div>
+        </header>
+        <div class="header">
+            <div class="card ">
+                <div class="title">
+                    <h1>ICECREAM</h1>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="container">
+                <div class="items"><img src="Vanilla.jpg" alt="Vanilla"></div>
+                <div class="item_detail">
+                    <div class="item_name">Vanilla</div>
+                    <div class="money">Rs60</div>
+                    <div></div>
+                </div>
+                <div class="counter-container" data-id="42">
+                    <button class="counter-button" onclick="decreaseCount(42)">-</button>
+                    <div class="counter-display" id="counter-42">0</div>
+                    <button class="counter-button" onclick="increaseCount(42)">+</button>
+                </div>
+                <div class="cart">
+                    <button onclick="addToCart(42)">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="container">
+                <div class="items"><img src="Chocolate.jpg" alt="Chocolate"></div>
+                <div class="item_detail">
+                    <div class="item_name">Chocolate</div>
+                    <div class="money">Rs80</div>
+                    <div></div>
+                </div>
+                <div class="counter-container" data-id="43">
+                    <button class="counter-button" onclick="decreaseCount(43)">-</button>
+                    <div class="counter-display" id="counter-43">0</div>
+                    <button class="counter-button" onclick="increaseCount(43)">+</button>
+                </div>
+                <div class="cart">
+                    <button onclick="addToCart(43)">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="container">
+                <div class="items"><img src="strawberry.jpg" alt="Strawberry"></div>
+                <div class="item_detail">
+                    <div class="item_name">Strawberry</div>
+                    <div class="money">Rs70</div>
+                    <div></div>
+                </div>
+                <div class="counter-container" data-id="44">
+                    <button class="counter-button" onclick="decreaseCount(44)">-</button>
+                    <div class="counter-display" id="counter-44">0</div>
+                    <button class="counter-button" onclick="increaseCount(44)">+</button>
+                </div>
+                <div class="cart">
+                    <button onclick="addToCart(44)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="container">
+                <div class="items"><img src="mango.jpg" alt="Mango"></div>
+                <div class="item_detail">
+                    <div class="item_name">Mango</div>
+                    <div class="money">Rs70</div>
+                    <div></div>
+                </div>
+                <div class="counter-container" data-id="45">
+                    <button class="counter-button" onclick="decreaseCount(45)">-</button>
+                    <div class="counter-display" id="counter-45">0</div>
+                    <button class="counter-button" onclick="increaseCount(45)">+</button>
+                </div>
+                <div class="cart">
+                    <button onclick="addToCart(45)">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="container">
+                <div class="items"><img src="Butter Scoch.jpg" alt="Butter Scoch"></div>
+                <div class="item_detail">
+                    <div class="item_name">Butter Scoch</div>
+                    <div class="money">Rs100</div>
+                    <div></div>
+                </div>
+                <div class="counter-container" data-id="46">
+                    <button class="counter-button" onclick="decreaseCount(46)">-</button>
+                    <div class="counter-display" id="counter-46">0</div>
+                    <button class="counter-button" onclick="increaseCount(46)">+</button>
+                </div>
+                <div class="cart">
+                    <button onclick="addToCart(46)">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="container">
+                <div class="items"><img src="Tender Coconut.jpg" alt="Tender Coconut"></div>
+                <div class="item_detail">
+                    <div class="item_name">Tender Coconut</div>
+                    <div class="money">Rs90</div>
+                    <div></div>
+                </div>
+                <div class="counter-container" data-id="47">
+                    <button class="counter-button" onclick="decreaseCount(47)">-</button>
+                    <div class="counter-display" id="counter-47">0</div>
+                    <button class="counter-button" onclick="increaseCount(47)">+</button>
+                </div>
+                <div class="cart">
+                    <button onclick="addToCart(47)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            let counters = {};
+            function updateDisplay(id) {
+                document.getElementById('counter-' + id).innerText = counters[id];
+            }
+            function increaseCount(id) {
+                if (!counters[id]) counters[id] = 0;
+                counters[id]++;
+                updateDisplay(id);
+            }
+            function decreaseCount(id) {
+                if (!counters[id]) counters[id] = 0;
+                if (counters[id] > 0) counters[id]--;
+                updateDisplay(id);
+            }
+            function addToCart(id) {
+        let quantity = counters[id] || 0;
+        if (quantity > 0) {
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "add_to_cart.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    alert(xhr.responseText);
+                }
+            };
+            xhr.send("id=" + id + "&quantity=" + quantity);
+        } else {
+            alert("Please select a quantity greater than 0");
+        }
+    }
+        </script>
+    </body>
+</html>

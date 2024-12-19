@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+*{
+    margin:0;
+    padding: 0;
+}
+.navbar{
+    display: flex;
+    justify-content:end ;
+    margin-top:-25px;
+    transform: translateY(35px);
+}
+.navbar a{
+    padding: 25px;
+    margin-top: 10px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.navbar a:active{
+    color: white; 
+}
+.navbar a:hover{
+    color: rgb(237, 222, 0);
+    text-decoration: underline;
+}
+.header .bg{
+   margin-top: -25px;
+   width: auto;
+}
+.bg{
+    border: 5px solid black;
+    width:1300px;
+    height: 350px;
+    background: url("homebg.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.title h1{
+    color:rgba(255, 255, 255, 0.715);
+   display: flex;
+   justify-content: baseline;
+   line-height: 2px;
+   transform: translateY(130px);
+   font-size: 180px;
+   -webkit-text-stroke-width: 0.1px;
+   text-shadow: 2px 2px 8px #ffd297bb;
+   font-family: Lora;
+   -webkit-text-stroke-color: rgba(14, 14, 14, 0.644);
+}
+.navbar {
+    height: 50px;
+    width: 100%;
+    background: transparent;
+    position: relative;
+}
+.navbar-links {
+    display: inline;
+    float: right;
+    font-size: 15px;
+}
+.navbar-links a {
+    display: inline-block;
+    padding: 13px 10px 13px 10px;
+    text-decoration: none;
+    color:white;
+    font-size: 20px;
+    box-shadow: 20px ;
+    font-weight: 500;
+}
+.navbar-links a:hover {
+    color: hwb(55 0% 0%);
+}
+.Info{
+    background-color: #444;
+    border-bottom: 1px solid #333;
+    color: gold;
+    text-align: center;
+    text-shadow: white;
+    padding: 20px 0;
+}
+.container2{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    box-sizing: border-box;
+}
+.container2 a{
+    text-decoration: none;
+}
+.Iteam_field{
+    width: 250px;
+    height: 150px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.Iteam_field img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.Text_field{
+    color: black;
+}
